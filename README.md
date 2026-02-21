@@ -41,7 +41,6 @@ source venv/bin/activate
 ## 3. Instala las dependencias:
 ```bash
 - pip install -r requirements.txt
-- npm i bootstrap@5.3.8
 ```
 
 ## 4. Configuración variables del entorno(.env)
@@ -70,4 +69,4 @@ python manage.py runserver
 - [] Modulo de alertas tempranas mediante Machine Learning.
 
 # Autores
-- Sofía Cartagena - 
+- Sofía Cartagena - *Desarrollo, Visión y Arquitectura de Datos*  - [GitHub](https://github.com/socartagena02)
