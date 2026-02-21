@@ -1,0 +1,66 @@
+{% load static %}
+
+{%block content%}
+
+<!----css del juego---->
+<link rel="stylesheet" href="{% static 'games/css/memorice.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<title>Memorice</title>
+
+<body>
+  <div id="inicio" class="screen">
+    <h1>Juego del Memorice</h1>
+    <p>Selecciona nivel:</p>
+
+    <button onclick="iniciarJuego(3)">Básico</button>
+    <button onclick="iniciarJuego(6)">Intermedio</button>
+    <button onclick="iniciarJuego(9)">Avanzado</button>
+    <br><br>
+    <button onclick="window.location.href='{% url "menu_juegos" %}'">
+        Volver al menú
+    </button>
+  </div>
+
+  <div id="juego" class="screen hidden">
+    <div class="scoreboard">
+
+      <div class="stats-container">
+        <div class="stat-box">
+          <i class="fas fa-clock"></i>
+          <span id="tiempo">Tiempo: 0</span>
+        </div>
+        <div class="stat-box">
+          <span id="puntaje">Puntaje: 0</span>
+          <i class="fas fa-star"></i>
+        </div>
+      </div>
+        <div class="controls">
+            <button id="btnSiguiente" class="hidden" onclick="siguienteNivel()">
+                Siguiente Nivel
+            </button>
+            <button onclick="volverMenu()">Volver al menú</button>
+        </div>
+
+        <div id="pantallaFinal" class="pantalla-final hidden">
+            <h2>¡Completaste el nivel!</h2>
+            <p id="resultadoFinal"></p>
+            <button onclick="volverMenu()">Volver al inicio</button>
+        </div>
+          <!--Audio-->
+      <audio id="flipSound" src="{% static 'games/assets/sounds/card-flip.mp3' %}"></audio>
+      <audio id="flipSoundError" src="{% static 'games/assets/sounds/card-swap.mp3' %}"></audio>
+      <audio id="matchSound" src="{% static 'games/assets/sounds/success-chime.mp3' %}"></audio>
+      <audio id="errorSound" src="{% static 'games/assets/sounds/daf-error.mp3' %}"></audio>
+      <audio id="winSound" src="{% static 'games/assets/sounds/win.mp3' %}"></audio>
+
+    <div id="tablero" class="board"></div>
+  </div>
+  
+  <!--scripts-->
+  <script src="{% static 'games/js/memorice.js' %}"></script>
+
+</body>
+
+
+    
+{%endblock%}
