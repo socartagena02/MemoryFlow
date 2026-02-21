@@ -1,12 +1,13 @@
 from pathlib import Path
+import os
+from dotenv import load_dotenv
+
+load_dotenv() 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-syp+0&_aa$2toq1t8g+%kt46n=bd@-gj7$)opp!7^naa5xlrtt'
-
-DEBUG = True
-
-ALLOWED_HOSTS = []
+SECRET_KEY = os.getenv('SECRET_KEY')
+DEBUG = os.getenv('DEBUG') == 'True'
 
 
 INSTALLED_APPS = [
@@ -16,6 +17,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'games',
 ]
 
 MIDDLEWARE = [
@@ -43,6 +45,12 @@ TEMPLATES = [
             ],
         },
     },
+]
+
+STATIC_URL = 'static/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static", 
 ]
 
 WSGI_APPLICATION = 'core.wsgi.application'
