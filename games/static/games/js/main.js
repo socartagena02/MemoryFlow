@@ -73,7 +73,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-// 1. Definimos la función de reproducción
 function iniciaMusica() {
     const theme = document.getElementById("bgmusic");
     if (theme) {

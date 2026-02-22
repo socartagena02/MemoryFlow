@@ -40,7 +40,7 @@ source venv/bin/activate
 ```
 ## 3. Instala las dependencias:
 ```bash
-- pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 ## 4. Configuración variables del entorno(.env)

@@ -53,21 +53,42 @@ window.iniciarJuego = function(parejasIniciales) {
 
 function generarTablero() {
     const tablero = document.getElementById("tablero");
-    tablero.innerHTML = "";
+    tablero.innerHTML = ""; 
     estado.parejasEncontradas = 0;
     estado.bloqueado = true; 
 
     const imagenes = imagenesBase.slice(0, estado.parejasActuales);
     const cartas = [...imagenes, ...imagenes].sort(() => Math.random() - 0.5);
 
-    tablero.style.gridTemplateColumns = `repeat(${Math.ceil(Math.sqrt(cartas.length))}, 110px)`;
+    // --- LÓGICA DE DIMENSIONES ---
+    // Si es nivel 3 (9 parejas = 18 cartas), usamos 6 columnas de 85px para que no se desborde
+    let columnas, cardSize;
+    
+    if (estado.parejasActuales === 9) {
+        columnas = 6;
+        cardSize = "85px"; 
+    } else if (estado.parejasActuales === 6) {
+        columnas = 4;
+        cardSize = "110px";
+    } else {
+        columnas = 3;
+        cardSize = "120px";
+    }
+
+    tablero.style.gridTemplateColumns = `repeat(${columnas}, ${cardSize})`;
+    tablero.style.width = "fit-content"; 
+    tablero.style.margin = "0 auto"; 
 
     cartas.forEach(src => {
         const card = document.createElement("div");
         card.classList.add("card");
+        
+        card.style.width = cardSize;
+        card.style.height = cardSize;
+
         card.innerHTML = `
             <div class="card-inner">
-                <div class="card-front"><img src="${src}"></div>
+                <div class="card-front"><img src="${src}" style="width: 80%; height: 80%;"></div>
                 <div class="card-back"></div>
             </div>
         `;
@@ -83,7 +104,6 @@ function generarTablero() {
         }, 2000);
     }, 300);
 }
-
 function voltearCarta(card, src) {
     if (estado.bloqueado || card.classList.contains("flip")) return;
 
@@ -104,19 +124,22 @@ function voltearCarta(card, src) {
     estado.bloqueado = true;
 
     if (estado.primeraCarta.src === estado.segundaCarta.src) {
-        const matchSound = document.getElementById("matchSound");
-        if (matchSound) matchSound.play();
-        
-        estado.puntaje += 10;
+        estado.puntaje += 150;
         estado.parejasEncontradas++;
         
-        aplicarBrilloPistacho(); 
+        aplicarBrilloPistacho();
+        const matchSound = document.getElementById("matchSound");
+        if (matchSound) matchSound.play();
 
         if (estado.parejasEncontradas === estado.parejasActuales) {
-            document.getElementById("btnSiguiente").classList.remove("hidden");
+            setTimeout(() => {
+                siguienteNivel(); 
+            }, 1000); 
+        } else {
+            resetSeleccion();
         }
-        resetSeleccion();
-    } else {
+    } 
+    else {
         const errorSound = document.getElementById("errorSound");
         if (errorSound) {
             errorSound.volume = 0.5;
@@ -135,7 +158,6 @@ function voltearCarta(card, src) {
     }
     actualizarUI();
 }
-
 // --- UTILIDADES ---
 
 function aplicarBrilloPistacho() {
@@ -180,15 +202,17 @@ function resetSeleccion() {
 
 window.siguienteNivel = function() {
     estado.nivelActual++;
-    estado.parejasActuales++; 
 
-    if (estado.parejasActuales > imagenesBase.length) {
+    if (estado.nivelActual === 2) {
+        estado.parejasActuales = 6;
+    } else if (estado.nivelActual === 3) {
+        estado.parejasActuales = 9;
+    } else {
         finalizarJuego();
         return;
     }
 
-    document.getElementById("btnSiguiente").classList.add("hidden");
-    estado.tiempo += 20;
+    estado.tiempo += 30; 
     generarTablero();
 };
 

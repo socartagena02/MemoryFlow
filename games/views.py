@@ -6,3 +6,6 @@ def index(request):
 
 def memorice(request):
     return render(request, 'games/memorice.html')
+
+def simon_dice(request):
+    return render(request, 'games/simon_dice.html')

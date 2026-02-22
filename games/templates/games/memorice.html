@@ -34,23 +34,16 @@
           <i class="fas fa-star"></i>
         </div>
       </div>
-        <div class="controls">
-            <button id="btnSiguiente" class="hidden" onclick="siguienteNivel()">
-                Siguiente Nivel
-            </button>
-            <button onclick="volverMenu()">Volver al menú</button>
-        </div>
-
         <div id="pantallaFinal" class="pantalla-final hidden">
             <h2>¡Completaste el nivel!</h2>
             <p id="resultadoFinal"></p>
             <button onclick="volverMenu()">Volver al inicio</button>
         </div>
-          <!--Audio-->
-      <audio id="flipSound" src="{% static 'games/assets/sounds/card-flip.mp3' %}"></audio>
-      <audio id="flipSoundError" src="{% static 'games/assets/sounds/card-swap.mp3' %}"></audio>
-      <audio id="matchSound" src="{% static 'games/assets/sounds/success-chime.mp3' %}"></audio>
-      <audio id="errorSound" src="{% static 'games/assets/sounds/daf-error.mp3' %}"></audio>
+      <!--Audio-->
+      <audio id="flipSound" src="{% static 'games/assets/sounds/popNoice.mp3' %}"></audio>
+      <audio id="flipSoundError" src="{% static 'games/assets/sounds/failAlert.mp3' %}"></audio>
+      <audio id="matchSound" src="{% static 'games/assets/sounds/correctAnswer.mp3' %}"></audio>
+      <audio id="errorSound" src="{% static 'games/assets/sounds/funnyBoing.mp3' %}"></audio>
       <audio id="winSound" src="{% static 'games/assets/sounds/win.mp3' %}"></audio>
 
     <div id="tablero" class="board"></div>
