@@ -1,4 +1,4 @@
-# MINDFLOW: REHABILITACIÓN COGNITIVA DIGITAL
+# MemoryFlow: REHABILITACIÓN COGNITIVA DIGITAL
 MindFlow es una plataforma SaaS (Software as a Service), diseñada para centros de rehabilitación multidisciplinados. Utiliza **gamificaciones** y **ML** para mejorar y monitorear funciones cognitivas como la atención, memoria de trabajo e inhibición de impulsos en pacientes de todas las edades.
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue)
@@ -27,8 +27,8 @@ El sistema de captura métrica de **latencia de respuesta** y **tasa de error** 
 
 ## 1. Clona el repositorio:
 ```bash
-git clone https://github.com/tu-usuario/techsalud.git
-cd MindFlow
+git clone https://github.com/socartagena02/MemoryFlow.git
+cd MemoryFlow
 ```
 ## 2. Crea el entorno
 ```bash
@@ -61,6 +61,31 @@ python manage.py migrate
 ## 6. Inicia el servidor
 ```bash
 python manage.py runserver
+```
+# Vista previa
+## Menú de juegos
+![paginaInicial1](games/static/games/assets/capturas/menuJuegosSimonDice.png)
+![paginaInicial2](games/static/games/assets/capturas/menuJuegosMemorice.png)
+![paginaInicial3](games/static/games/assets/capturas/menuJuegosTrazaCamino.png)
+
+## Juegos
+### Simon dice
+![SimonDiceMenu](games/static/games/assets/capturas/menuDificultadSimonDice.png)
+![DificultadFacil](games/static/games/assets/capturas/nivelBasicoSimonDice.png)
+![DificultadMediana](games/static/games/assets/capturas/nivelIntermedioSimonDice.png)
+![DificultadDificil](games/static/games/assets/capturas/nivelAvanzadoSimonDice.png)
+
+### Memorice
+![MemoriceeMenu](games/static/games/assets/capturas/menuDificultadMemorice.png)
+![dificultadBasicaMemorice](games/static/games/assets/capturas/dificultadBasicaMemorice.png)
+![dificultadBasicaMemorice](games/static/games/assets/capturas/dificultadBasicaMemorice-cardflip.png)
+![dificultadBasicaMemorice](games/static/games/assets/capturas/dificultadBasicaMemorice(2).png)
+![dificultadBasicaMemorice](games/static/games/assets/capturas/dificultadBasicaMemorice-cardflip(2).png)
+![dificultadBasicaMemorice](games/static/games/assets/capturas/dificultadBasicaMemorice-cardflipNivelCompletado.png)
+
+# MockUp
+```bash
+https://www.figma.com/proto/toq6iZzf5nAo4pHuaAxr9K/MemoryFlow---project?node-id=0-1&t=IRDaqgImEHMa3P6r-1
 ```
 
 # Roadmap (Próximas versiones)
