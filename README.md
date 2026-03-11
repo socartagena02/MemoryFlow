@@ -41,11 +41,7 @@ permitiendo alimentar:
    - Series temporales de desempeño
    
 ## Videos 
-### Simon Dice
-![simonDice](games/static/games/assets/videos/simondice.mp4)
-
-### Memorice
-![memorice-dificultadBasica](games/static/games/assets/videos/memorice-dificultadBasica.mp4)
+Proximamente disponibles
 
 # Vista previa
 ## Menú de juegos
