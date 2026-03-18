@@ -70,10 +70,10 @@
                                     <td>{{ p.paciente.nickname }}</td> 
                                     <td>{{ p.juego }}</td>
                                     <td>{{ p.puntaje }}</td>
-                                    <td>{{ p.tiempo }}</td>
                                     <td {% if p.tiempo == "00:00" %} class="text-danger fw-bold" {% endif %}>
                                         {{ p.tiempo }}
                                     </td>
+                                    <td>{{ p.fecha|date:"d/m/Y H:i" }}</td>
                                 </tr>
                                 {% endfor %}
                             </tbody>
