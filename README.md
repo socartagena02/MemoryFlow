@@ -1,5 +1,5 @@
-# MemoryFlow
-MemoryFlow es una plataforma web de estimulación cognitiva orientada a centros de rehabilitación que utiliza ejercicios gamificados para evaluar funciones ejecutivas como memoria de trabajo, atención sostenida y control inhibitorio.
+# CogniStream
+CogniStream es una plataforma web de estimulación cognitiva orientada a centros de rehabilitación que utiliza ejercicios gamificados para evaluar funciones ejecutivas como memoria de trabajo, atención sostenida y control inhibitorio.
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue)
 ![Django](https://img.shields.io/badge/Django-6.0-green)
@@ -66,15 +66,14 @@ Proximamente disponibles
 
 # MockUp
 ```bash
-https://www.figma.com/proto/toq6iZzf5nAo4pHuaAxr9K/MemoryFlow---project?node-id=0-1&t=IRDaqgImEHMa3P6r-1
+https://www.figma.com/design/toq6iZzf5nAo4pHuaAxr9K/CogniStream---project?node-id=0-1&t=HoxuAQYonDJFTRNV-1
 ```
 # Estructura
-MemoryFlow/
+CogniStream/
  ├── core/
  ├── games/
- ├── users/
- ├── templates/
- ├── static/
+       ├── templates/
+       ├── static/
  ├── manage.py
  └── requirements.txt
 
@@ -82,8 +81,8 @@ MemoryFlow/
 
 ## 1. Clonar repositorio
 ```bash
-git clone https://github.com/socartagena02/MemoryFlow.git
-cd MemoryFlow
+git clone https://github.com/socartagena02/CogniStream.git
+cd CogniStream
 ```
 ## 2. Crear entorno virtual
 ```bash
