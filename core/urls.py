@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 from games import views
+from django.views.generic import TemplateView
 
 urlpatterns = [
     # Admin
@@ -17,7 +18,10 @@ urlpatterns = [
     
     # App
     path('dashboard/', views.dashboard, name='dashboard'),
-    path('menu_juegos', views.menuJuegos, name='menu_juegos'),
+    path('menu_juegos/', views.menuJuegos, name='menu_juegos'),
+    
+    # Bots
+    path("robots.txt", TemplateView.as_view(template_name="games/robots.txt", content_type="text/plain")),
     
     # Juegos
     path('memorice/', views.memorice, name='memorice'),
@@ -30,5 +34,5 @@ urlpatterns = [
     path('api/analizar/', views.analisis, name='analisis'),
     
     # Sesión
-    path('logout', views.logout, name="logout"),
+    path('logout/', views.logout, name="logout"),
 ]
