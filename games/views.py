@@ -569,7 +569,8 @@ def analisis(request):
             datos_pacientes[p.paciente.codigo_publico].append({
                 'juego': p.juego,
                 'fallos': p.fallos,
-                'reaccion': float(p.tiempo_reaccion_promedio
+                'reaccion': 
+                    float(p.tiempo_reaccion_promedio
                     if p.tiempo_reaccion_promedio is not None
                     else None
                 ),
